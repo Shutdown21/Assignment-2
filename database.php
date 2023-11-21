@@ -1,9 +1,6 @@
 <?php
 
-$servername = "localhost";
-$database = "Assignment2";
-$username = "username";
-$password = "password";
+require_once('db_credential.php');
 
 function db_connect() {
     $connection = mysqli_connect($servername,  $database, $username, $password);
