@@ -1,21 +1,20 @@
-/* style.css */
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8; /* Light gray background */
+    background-color: #f8f8f8;
 }
 
 header {
-    background-color: #555; /* Dark gray header background */
+    background-color: #555;
     color: #fff;
     text-align: center;
     padding: 10px;
 }
 
 nav {
-    background-color: #777; /* Slightly lighter gray navigation background */
+    background-color: #777;
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -24,18 +23,22 @@ nav {
 nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 10px;
+    padding: 10px;
+}
+
+nav a:hover{
+    background-color: #575757;
 }
 
 section {
     padding: 20px;
     text-align: center;
-    background-color: #fff; /* White content background */
+    background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    background-color: #555; /* Dark gray footer background */
+    background-color: #555;
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -44,7 +47,6 @@ footer {
     width: 100%;
 }
 
-/* Form Styles */
 
 form {
     max-width: 400px;
@@ -77,5 +79,5 @@ form button {
 }
 
 #login button {
-    background-color: #2ecc71; /* Change button color for login page */
+    background-color: #2ecc71;
 }
