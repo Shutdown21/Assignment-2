@@ -3,62 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../public/style.css">
     <title>Data Display</title>
 </head>
 <body>
+    <?php include ("headernav.php") ?>
 
-<?php
-require_once('../private/db_credential.php');
-require_once('../private/database.php');
-$db = db_connect();
-?>
-<?php include ("headernav.php") ?>
-<?php 
-$sql = "SELECT * FROM games ";
-//echo $sql;
-$result_set = mysqli_query($db,$sql);
-?>
-    
+    <section id="data-display">
+    <label for="data-entry-selector">Select Game:</label>
+        <select id="data-entry-selector" onchange="displaySelectedDataEntry()">
+            <?php
+                require_once('database.php');
+                $db = db_connect();
 
-<section id="data-display">
-<div id="content">
-    <div class="subjects listing">
-    <h1>Games</h1>
+                $sql = "SELECT id, name FROM games";
+                $result_set = mysqli_query($db, $sql);
 
-    <div class="actions">
-        <a class="action" href="data-entry.php">Add new game entry</a>
-    </div>
+                while ($row = mysqli_fetch_assoc($result_set)) {
+                    echo '<option value="data-entry-' . $row['id'] . '">' . $row['name'] . '</option>';
+                }
+            ?>
+        </select>
 
-        <table class="list">
-        <tr>
-            <th>ID</th>
-            <th>name</th>
-            <th>developer</th>
-            <th>platform</th>
-            <th>genre</th>
-            <th>&nbsp</th>
-            <th>&nbsp</th>
-            <th>&nbsp</th>
-        </tr>
+        <?php
+            $sql = "SELECT * FROM games LIMIT 1";
+            $result_set = mysqli_query($db, $sql);
+            $initial_data = mysqli_fetch_assoc($result_set);
+        ?>
 
-        <?php while($results = mysqli_fetch_assoc($result_set)) { ?>
-            <tr>
-            <td><?php echo $results['id']; ?></td>
-            <td><?php echo $results['Name']; ?></td>
-            <td><?php echo $results['Developer'] ; ?></td>
-            <td><?php echo $results['Platform']; ?></td>
-            <td><?php echo $results['Genre']; ?></td>
-            <td><a class="action" href="<?php echo"../private/show.php?id=" . $results['id']; ?>">View</a></td>
-            <td><a class="action" href="<?php echo "../private/edit.php?id=" . $results['id']; ?>">Edit</a></td>
-            <td><a class="action" href=<?php echo "../private/delete.php?id=" . $results['id']; ?>">delete</a></td>
-            
-            </tr>
-        <?php } ?>
-        </table>
-    <br>
-    <br>
+        <div class="data-entry" id="data-entry-<?php echo $initial_data['id']; ?>">
+            <h3>Data Entry <?php echo $initial_data['id']; ?></h3>
+            <label for="name-<?php echo $initial_data['id']; ?>">Name:</label>
+            <input type="text" id="name-<?php echo $initial_data['id']; ?>" class="display-text" readonly>
+            <label for="developer-<?php echo $initial_data['id']; ?>">Developer:</label>
+            <input type="text" id="developer-<?php echo $initial_data['id']; ?>" class="display-text" readonly>
+            <label for="platform-<?php echo $initial_data['id']; ?>">Platform:</label>
+            <input type="text" id="platform-<?php echo $initial_data['id']; ?>" class="display-text" readonly>
+            <label for="genre-<?php echo $initial_data['id']; ?>">Genre:</label>
+            <input type="text" id="genre-<?php echo $initial_data['id']; ?>" class="display-text" readonly>
+            <label for="comment-<?php echo $initial_data['id']; ?>">Add Comment:</label>
+            <input type="text" id="comment-<?php echo $initial_data['id']; ?>" class="comment-input">
+        </div>
     </section>
+
     <?php include("footer.php"); ?>
 
 </body>

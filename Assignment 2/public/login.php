@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../public/style.css">
     <title>Login</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
 
-            <p>Don't have an account? <a href="signup.html">Sign up here</a>.</p>
+            <p>Don't have an account? <a href="signup.php">Sign up here</a>.</p>
 
             <button type="submit">Login</button>
         </form>
