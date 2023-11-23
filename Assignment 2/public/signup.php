@@ -8,7 +8,13 @@
 </head>
 <body>
 
-<?php include ("headernav.php") ?>
+<?php 
+session_start();
+if (isset($_SESSION['user_id'])) {
+    include ("headerLogged.php");
+} else {
+    include ("headernav.php");
+} ?>
 
     <section id="signup">
         <h2>Sign Up</h2>
@@ -18,8 +24,6 @@
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-
-            <p>Already have an account? <a href="login.php">Log in here</a>.</p>
 
             <button type="submit">Sign Up</button>
         </form>

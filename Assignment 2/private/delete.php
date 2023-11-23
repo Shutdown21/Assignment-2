@@ -1,6 +1,10 @@
 <?php
 require_once('database.php');
-include "../public/headernav.php" ;
+if (isset($_SESSION['user_id'])) {
+    include ("headerLogged.php");
+} else {
+    include ("headernav.php");
+}
 $db = db_connect();
 
 if(!isset($_GET['id'])) {

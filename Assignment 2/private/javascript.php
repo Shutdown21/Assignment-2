@@ -27,4 +27,5 @@ function updateTextFields(dataEntryId) {
 }
 
 displaySelectedDataEntry();
+
 </script>

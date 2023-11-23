@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/style.css">
+    <script src="../private/javascript.php"></script>
     <title>Login</title>
 </head>
 <body>
-<?php include ("headernav.php") ?>
+<?php 
+session_start();
+if (isset($_SESSION['user_id'])) {
+    include ("headerLogged.php");
+} else {
+    include ("headernav.php");
+} ?>
 
     <section id="login">
         <h2>Login</h2>
-        <form>
+        <form action= "../private/logincheck.php" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
