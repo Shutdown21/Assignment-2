@@ -7,7 +7,7 @@
     <script src="../private/javascript.php"></script>
     <title>Data Display</title>
 </head>
-<body>
+<body onload="displaySelectedDataEntry()">
 <?php 
 session_start();
 if (isset($_SESSION['user_id'])) {
