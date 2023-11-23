@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/style.css">
+    <script src="javascript.js" defer></script>
     <title>Data Entry</title>
 </head>
-<body>
+<body onload="displaySelectedDataEntry()">
 
 <?php include ("headernav.php") ?>
 
