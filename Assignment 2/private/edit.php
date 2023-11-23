@@ -33,7 +33,11 @@ $result = mysqli_fetch_assoc($result_set);
 }
 ?>
 
-<?php include '../public/headernav.php' ?>
+<?php if (isset($_SESSION['user_id'])) {
+    include ("headerLogged.php");
+} else {
+    include ("headernav.php");
+} ?>
 
 <div id="content">
 

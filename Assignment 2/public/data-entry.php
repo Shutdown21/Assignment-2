@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/style.css">
-    <script src="javascript.js" defer></script>
     <title>Data Entry</title>
 </head>
-<body onload="displaySelectedDataEntry()">
+<body>
 
-<?php include ("headernav.php") ?>
+<?php
+session_start();
+if (isset($_SESSION['user_id'])) {
+    include ("headerLogged.php");
+} else {
+    include ("headernav.php");
+} ?>
 
     <section id="data-entry">
     <h2>New Game Entry</h2>
