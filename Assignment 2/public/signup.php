@@ -19,6 +19,8 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
 
+            <p>Already have an account? <a href="login.php">Log in here</a>.</p>
+
             <button type="submit">Sign Up</button>
         </form>
     </section>
