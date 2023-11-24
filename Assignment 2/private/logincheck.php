@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $sql = "SELECT Username, Password FROM account WHERE Username = '$username'";
+    $sql = "SELECT id, Username, Password FROM account WHERE Username = '$username'";
 
     $result_set = mysqli_query($db, $sql);
     
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
         }
         else {
-            header("Location: ../public/data-display.php");
+            header("Location: ../public/login.php");
         }
     }
 }
