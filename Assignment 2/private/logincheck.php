@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = mysqli_fetch_assoc($result_set);
         if ($user && $user['Password']===$password) {
                 // Successful login
-            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_id'] = $user['Username'];
             header("Location: ../public/account.php");
             
         }
