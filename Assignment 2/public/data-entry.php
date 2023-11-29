@@ -31,7 +31,7 @@ if (isset($_SESSION['user_id'])) {
             <label for="genre">Genre:</label>
             <input type="text" id="genre" name="genre" required>
 
-            <button type="submit">Sign Up</button>
+            <button type="submit">Submit</button>
         </form>
     </section>
 
