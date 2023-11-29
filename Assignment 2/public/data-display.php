@@ -17,7 +17,7 @@ if (isset($_SESSION['user_id'])) {
 } ?>
 
 <section id="data-display">
-        <h2>Data Display</h2>
+        <h2>Games</h2>
 
         <div id="display-container">
             <?php
