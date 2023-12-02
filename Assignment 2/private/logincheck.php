@@ -7,8 +7,8 @@ require_once('../private/database.php');
 $db = db_connect();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+    $username = $_POST["username2"];
+    $password = $_POST["password2"];
 
     $sql = "SELECT id, Username, Password FROM account WHERE Username = '$username'";
 
@@ -19,11 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($user && $user['Password']===$password) {
                 // Successful login
             $_SESSION['user_id'] = $user['Username'];
-            header("Location: ../public/account.php");
-            
-        }
-        else {
-            header("Location: ../public/login.php");
+            echo json_encode(["success" => true, "redirect" => "../public/account.php"]);
+        } else {
+            echo json_encode(["success" => false, "error" => "Invalid username or password"]);
         }
     }
 }
