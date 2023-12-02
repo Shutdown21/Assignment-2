@@ -18,12 +18,13 @@ if (isset($_SESSION['user_id'])) {
 
 if (isset($_SESSION['user_id'])) {
 ?>
-    <div>
-        <?php
-        echo '<h1>Username</h1>';
-        echo  $_SESSION['user_id'];
-        ?>
+<section>
+    <div class= "account">
+        <h1>Username</h1>
+        <?php echo $_SESSION['user_id']?>
     </div>
+</section>
+
     <form action="../private/logout.php">
         <button type="submit" name="logout">Log out</button>
     </form>
