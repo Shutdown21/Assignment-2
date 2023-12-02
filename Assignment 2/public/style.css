@@ -81,3 +81,57 @@ form button {
 #login button {
     background-color: #3498db;
 }
+
+#data-display {
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#search-form,
+#filter-form {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+}
+
+#search-form h2,
+#filter-form h2 {
+    margin-bottom: 10px;
+}
+
+#search-form input,
+#filter-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#search-form button,
+#filter-form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#display-container {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.game-entry {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.game-entry h3 {
+    margin-bottom: 10px;
+}
