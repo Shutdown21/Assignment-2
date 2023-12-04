@@ -13,7 +13,7 @@
     </header>
 
     <nav>
-        <a href="data-entry.php">Data Entry</a>
-        <a href="data-display.php">Data Display</a>
+        <a href="data-entry.php">New Game</a>
+        <a href="data-display.php">Game Library</a>
         <a href="account.php">Account</a>
     </nav>

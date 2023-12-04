@@ -130,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             var requestBody = serializedForm.join("&");
 
-            // Send the AJAX request
             xhr.send(requestBody);
         }
     });

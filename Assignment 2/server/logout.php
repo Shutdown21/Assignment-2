@@ -6,6 +6,6 @@ unset($_SESSION['user_id']);
 session_unset();
 
 session_destroy();
-header("Location: ../public/login.php");
+header("Location: ../pages/login.php");
 exit;
 ?>

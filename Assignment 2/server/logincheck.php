@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require_once('../private/db_credential.php');
-require_once('../private/database.php');
+require_once('../database/db_credential.php');
+require_once('../database/database.php');
 
 $db = db_connect();
 
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($user && $user['Password']===$password) {
                 // Successful login
             $_SESSION['user_id'] = $user['Username'];
-            echo json_encode(["success" => true, "redirect" => "../public/account.php"]);
+            echo json_encode(["success" => true, "redirect" => "../pages/account.php"]);
         } else {
             echo json_encode(["success" => false, "error" => "Invalid username or password"]);
         }
