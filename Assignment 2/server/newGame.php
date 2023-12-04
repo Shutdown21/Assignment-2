@@ -16,11 +16,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $id = mysqli_insert_id($db);
     //redirect to show page
-    header("Location: ../pages/gameLibrary.php?id=  $id");
+    header("Location: ../pages/game-library.php?id=  $id");
 
 
 } else {
-    header("Location:  ../pages/newGameEntry.php");
+    header("Location:  ../pages/new-game.php");
 }
 
 ?>

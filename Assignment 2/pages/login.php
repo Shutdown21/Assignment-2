@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../pages/style.css">
+    <link rel="stylesheet" href="../style/style.css">
     <script src="../scripts/javascript.js"></script>
     <title>Login</title>
 </head>
@@ -18,7 +18,7 @@ if (isset($_SESSION['user_id'])) {
 
     <section id="login">
         <h2>Login</h2>
-        <form action= "../server/logincheck.php" id="form2" method="POST">
+        <form action= "../private/logincheck.php" id="form2" method="POST">
             <label for="username2">Username:</label>
             <input type="text" id="username2" name="username2">
 

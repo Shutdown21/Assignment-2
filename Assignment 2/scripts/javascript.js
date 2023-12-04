@@ -1,4 +1,4 @@
-function validate() {
+function validateSignup() {
     // Reset error messages and styles
     resetErrors();
 
@@ -97,10 +97,9 @@ function displayLoginError(errorMessage) {
     username2Input.parentNode.appendChild(loginErrorDiv);
 }
 
-
 document.addEventListener('DOMContentLoaded', function () {
-    var form = document.getElementById('form2');
-    form.addEventListener('submit', function (event) {
+    var form2 = document.getElementById('form2');
+    form2.addEventListener('submit', function (event) {
         event.preventDefault();
 
         // Perform client-side validation
@@ -123,17 +122,15 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             // Serialize form data
-            var formData = new FormData(form);
+            var formData = new FormData(form2);
             var serializedForm = [];
             formData.forEach(function (value, key) {
                 serializedForm.push(key + "=" + encodeURIComponent(value));
             });
             var requestBody = serializedForm.join("&");
 
+            // Send the AJAX request
             xhr.send(requestBody);
         }
     });
 });
-
-
-

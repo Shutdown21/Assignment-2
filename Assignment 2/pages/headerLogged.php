@@ -4,7 +4,7 @@
     <head>
     <title>Game Library</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" media="all" href="<?php echo '../style.css'; ?>" />
+    <link rel="stylesheet" media="all" href="<?php echo '../style/style.css'; ?>" />
     </head>
 
     <body>
@@ -13,7 +13,7 @@
     </header>
 
     <nav>
-        <a href="data-entry.php">New Game</a>
-        <a href="data-display.php">Game Library</a>
+        <a href="new-game.php">Add New Game</a>
+        <a href="game-library.php">Game Library</a>
         <a href="account.php">Account</a>
     </nav>
